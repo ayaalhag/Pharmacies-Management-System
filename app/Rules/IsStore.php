@@ -5,7 +5,7 @@ namespace App\Rules;
 use Illuminate\Contracts\Validation\Rule;
 use App\Models\User;
 
-class IsPharmacist implements Rule
+class IsStore implements Rule
 {
     private $attribute;
 
@@ -17,11 +17,11 @@ class IsPharmacist implements Rule
     public function passes($attribute, $value)
     {
         $user = User::find($value);
-        return $user && $user->rule == 'pharmacist';
+        return $user && $user->rule == 'store';
     }
 
     public function message()
     {
-        return 'The ' . $this->attribute . ' must have the rule pharmacist.';
+        return 'The ' . $this->attribute . ' must have the rule store.';
     }
 }

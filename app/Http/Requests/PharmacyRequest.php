@@ -29,7 +29,7 @@ class PharmacyRequest extends FormRequest
             'full_name' => 'required|max:55|string',
             'pharmacy_name' => 'required|max:55|string',
             'pharmacy_address' => 'required|max:55|string',
-            'rule' => ['required','string',new IsPharmacist()],
+            'rule' => ['required','string'],
             'phone' => 'required|string|digits:12|unique:users',
             'password' => ['required', 'confirmed',
              Password_rule::min(8)
